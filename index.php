@@ -5,7 +5,7 @@
  * @package     NickDavis\Helpers
  * @since       1.0.0
  * @author      Nick Davis
- * @link        https://iamnickdavis.com
+ * @link        https://github.com/nickdavis/helpers
  * @license     GNU General Public License 2.0+
  */
 
