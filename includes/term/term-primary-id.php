@@ -55,6 +55,25 @@ function get_yoast_primary_term_id( $taxonomy_slug ) {
 }
 
 /**
+ * Returns the first specified taxonomy term for the post, if set.
+ *
+ * @since 1.0.0
+ *
+ * @param $taxonomy_slug
+ *
+ * @return object|null
+ */
+function get_first_term( $taxonomy_slug ) {
+	$terms = get_the_terms( get_the_ID(), $taxonomy_slug );
+
+	if ( ! $terms ) {
+		return;
+	}
+
+	return $terms[0];
+}
+
+/**
  * Returns the first specified taxonomy term ID for the post, if set.
  *
  * @since 1.0.0
@@ -64,11 +83,7 @@ function get_yoast_primary_term_id( $taxonomy_slug ) {
  * @return int|null
  */
 function get_first_term_id( $taxonomy_slug ) {
-	$terms = get_the_terms( get_the_ID(), $taxonomy_slug );
+	$term = get_first_term( $taxonomy_slug );
 
-	if ( ! $terms ) {
-		return;
-	}
-
-	return $terms[0];
+	return $term->term_id;
 }
