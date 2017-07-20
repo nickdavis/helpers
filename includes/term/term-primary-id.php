@@ -85,5 +85,9 @@ function get_first_term( $taxonomy_slug ) {
 function get_first_term_id( $taxonomy_slug ) {
 	$term = get_first_term( $taxonomy_slug );
 
+	if ( ! $term ) {
+		return;
+	}
+
 	return $term->term_id;
 }
